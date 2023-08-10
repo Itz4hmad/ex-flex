@@ -1,0 +1,310 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background-image: url(mountain-night.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+header {
+    background-color: darkblue;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 2vw 5%;
+    border-bottom: 1px solid white;
+}
+
+.logo{
+    font-size: 3vw;
+    color: white;
+}
+input{
+    background-color: white;
+    color: gray;
+    width: 10vw;
+    height: 2vh;
+    border-radius: 10vh;
+    padding: 1vw;
+    border: 2px solid white;
+    transition: all .2s ease;
+}
+
+input:hover{
+    border-color: rgb(0, 153, 255);
+    background-color: transparent;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a {
+    font-size: 1.5vw;
+    color: rgb(189, 189, 189);
+    text-decoration: none;
+    padding: 0 2vh;
+    transition: all .2s ease;
+}
+
+nav ul li a:hover{
+    color: yellow;
+}
+
+.btn{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    text-transform: capitalize;
+    padding: 1vw 3vh;
+    border-radius: 10vh;
+    transition: all .2s ease;
+}
+
+.btn-1{
+    background-color:rgb(0, 153, 255);
+    margin-right: 10px;
+    border: 2px solid transparent;
+
+}
+
+.btn-1:hover{
+    border: 2px solid rgb(0, 153, 255);
+    background-color: transparent; 
+}
+
+.btn-2{
+  border: 2px solid rgb(0, 153, 255);
+}
+
+.btn-2:hover{
+    background-color:rgb(0, 153, 255);
+}
+
+
+#toggle{
+    display: none;
+}
+
+input:checked ~ nav ul{
+    transform:translateY(0) ;
+
+ }
+
+ input:checked ~ nav .navbar-toggler{
+    margin-top: 2.5vh;
+ }
+
+
+ input:checked ~ nav .navbar-toggler .bar:nth-child(1){
+    position: absolute;
+    transform: rotate(45deg);
+ }
+
+ input:checked ~ nav .navbar-toggler .bar:nth-child(2){
+    display: none;
+ }
+
+ input:checked ~ nav .navbar-toggler .bar:nth-child(3){
+    transform: rotate(-45deg);
+ }
+
+ .card{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+	height: 30vh;
+	width: 20vw;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 10px 20px darkred;
+	transition: all .4s ;
+  }
+
+  .card img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+    background: black;
+    cursor: pointer;
+  }
+
+  .tex1{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font: 1.4rem sans-serif;
+    color: #ffff;
+    position: relative;
+    bottom: 102%;
+   background-color: black;
+  }
+
+  .content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+  }
+
+  .card:hover .overlay{
+    opacity: 0.8;
+  }
+
+/* ---------------media query------------------- */
+
+@media (max-width: 946px){
+
+    header{
+        width: 100vw;
+        height: 10vh;
+        padding: 1vw;
+        
+    }
+
+    .logo{
+        font-size: 3vw;
+        margin-right: 2vw;
+    }
+
+    nav ul li a{
+        font-size: 1.5vw;
+    }
+    .button{
+        display: flex;
+        font-size: 0.6rem;
+        margin-left: 2vw;
+        justify-content: space-between;
+    }
+    
+    input{
+        width: 4rem;
+        height: 1rem;
+        font-size: 0.5rem;
+        
+    }
+
+}
+
+@media (max-width: 775px){
+
+    header{
+        width: 100vw;
+        height: 10vh;
+        justify-content: center;
+    }
+
+    .logo{
+        font-size: 2.5vw;
+        
+    }
+
+    nav ul li a{
+        font-size: 1rem;
+        
+    }
+    .button{
+        font-size: 1.5vw;
+    }
+    
+    .btn-2{
+        display: none;
+    }
+    
+    input{
+        display: flex;
+        width: 3rem;
+        height:0.8rem;
+        font-size: 0.5rem;
+        
+    }
+    
+}@media (max-width: 573px){
+
+    .logo{
+        font-size: 4vw;
+        
+    }
+
+    header{
+        width: 100vw;
+        height: 8vh;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .btn-1{
+        display: none;
+    }
+
+    nav ul li a{
+       font-size: 2vw;
+    }
+
+    nav ul {
+        display: grid;
+        position: absolute;
+        left: 0;
+        background: rgb(0, 140, 255);
+        width: 100% ;
+        top: 8vh;
+        transform:translateY(-100%) ;
+        z-index:-1 ;
+        transition: .6s;
+    }
+
+    nav .navbar-toggler {
+        display: grid !important;
+    }
+
+
+    nav .navbar-toggler {
+        display: none;
+        height: min-content;
+        position: absolute;
+        right: 1vh;
+        top: 1vh;
+        cursor: pointer;
+    }
+
+
+    nav .navbar-toggler .bar{
+        font-size: xx-small;
+        width: 2.5rem;
+        height: 0.8vh;
+        margin-bottom: 0.5rem;
+        background: #ffff;
+        transition: .4s;
+        border: 1px solid;
+    }
+
+
+
+    .search input{
+        width: 4rem;
+        height: 1.5rem;
+        position:relative;
+        left: 6vh;
+}
+
+}
